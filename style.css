@@ -11,6 +11,8 @@ body {
     background-color: #0B0B0B;
     color: #fff;
     line-height: 1.6;
+    animation-duration: 2s;
+    animation-name: slideitop;
 }
 
 header {
@@ -29,4 +31,776 @@ header {
     height: auto;
     border-radius: 50%;
     cursor: pointer;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+nav {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+}
+
+nav .navbar-list {
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 500;
+    font-family: "Montserrat", sans-serif;
+}
+
+nav .navbar-list:hover {
+    transition: all ease 1s;
+    color: #C8A54D;
+    cursor: pointer;
+}
+
+#ctt-a {
+    display: inline;
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 500;
+    font-family: "Montserrat", sans-serif;
+    border: 1px solid #C8A54D;
+    border-radius: 25px;
+    background-color: #111;
+    padding: 5px 30px 5px 30px;
+}
+
+#ctt-a:hover {
+    cursor: pointer;
+    color: #0B0B0B;
+    background-color: #C8A54D;
+    transition: all ease 0.5s;
+    font-weight: 500;
+}
+
+#span {
+    display: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1,
+h2,
+h3 {
+    font-weight: bold;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.hero {
+    background: url('assets/images/Colar\ de\ Ouro\ Loras\ Gold\ \(1\).png') no-repeat center center/cover;
+    background-size: 100% auto;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    margin-bottom: 10px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    color: #fff;
+}
+
+.hero span {
+    color: #C8A54D;
+}
+
+.aboutus-section {
+    gap: 30cap;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+
+    padding: 30px;
+    background: #C8A54D;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.logo-image2 {
+    width: 20vw;
+    height: auto;
+    border-radius: 50%;
+    animation: flutuar 3s infinite ease-in-out;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+}
+
+.cta {
+    margin-top: 20px;
+    display: inline-block;
+    background: #C8A54D;
+    color: #0B0B0B;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.cta:hover {
+    background: #fff;
+    color: #C8A54D;
+}
+
+.produtos {
+    padding: 80px 20px;
+    background: #111;
+    text-align: center;
+}
+
+.produtos h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #C8A54D;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: #1A1A1A;
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid #C8A54D;
+    transition: 0.3s;
+}
+
+.card:hover {
+    background: #C8A54D;
+    color: #0B0B0B;
+}
+
+.contato {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+#maintitle {
+    text-align: center;
+    margin-top: 120px;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #C8A54D;
+}
+
+.contato h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #C8A54D;
+}
+
+.form-contact-container {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: auto;
+    padding: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 40vw;
+    height: 80vh;
+    padding: 10px;
+    background-color: #1A1A1A;
+    border: 3px solid var(--color-bg-dark2);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+input,
+textarea {
+    width: 60%;
+    height: 50px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--color-bg-dark2);
+    text-align: left;
+    font-family: "Poppins", sans-serif;
+    font-size: 0.9rem;
+    margin-bottom: 2%;
+}
+
+button {
+    width: 20%;
+    height: 30px;
+    padding: 5px 25px 5px 25px;
+    border-radius: 5px;
+    border: none;
+    background-color: #C8A54D;
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #D4AF37;
+    transition: all 0.6s;
+}
+
+.contact-image {
+    width: 45vw;
+    height: auto;
+
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+.contact-image1 {
+    display: none;
+}
+
+.whatsapp-btn {
+    background: #25D366;
+    padding: 12px 25px;
+    border-radius: 25px;
+    color: white;
+    font-weight: bold;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.whatsapp-btn:hover {
+    background: #1da851;
+}
+
+.whatsapp-section {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.i {
+    color: #fff;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all ease 0.5s;
+}
+
+i:hover {
+    color: #C8A54D;
+    transform: scale(1.5);
+}
+
+.social-media-icons {
+    margin-top: 5px;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+footer {
+    background: #0B0B0B;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+    border-top: 2px solid #C8A54D;
+}
+
+
+@keyframes slideitop {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slidebottom {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes flutuar {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+@media (max-width: 890px) {
+
+    .logo {
+        width: 20vw;
+        height: auto;
+    }
+
+    nav {
+        display: flex;
+    }
+
+    #span {
+        display: none;
+    }
+
+    .hero {
+        background: url('assets/images/Colar\ de\ Ouro\ Loras\ Gold.png') no-repeat center right/cover;
+        background-size: 200% auto;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 2rem;
+        margin-bottom: 0px;
+    }
+
+    .hero>div>h1 {
+        font-size: 2rem;
+        text-indent: -2cap;
+    }
+
+    .aboutus-section {
+        gap: 5cap;
+        flex-flow: column wrap;
+        margin-bottom: 4cap;
+
+    }
+
+    .logo-image2 {
+        width: 50vw;
+        height: auto;
+        border-radius: 10px;
+        animation: flutuar 3s infinite ease-in-out;
+    }
+
+    .produtos h2 {
+        font-size: 1.8rem;
+        margin-bottom: 40px;
+    }
+
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+    }
+
+    .form-contact-container {
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
+        height: auto;
+        padding: 20px;
+
+
+    }
+
+    form {
+        flex-flow: column wrap;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 1;
+        width: 90vw;
+        height: 80vh;
+        padding: 10px;
+
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 0px;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 0px;
+    }
+
+    .contact-image {
+        display: none;
+
+    }
+
+    .contact-image1 {
+        display: flex;
+        width: 85vw;
+        height: auto;
+        cursor: pointer;
+
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 10px;
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .logo {
+        width: 15vw;
+        height: auto;
+    }
+
+    nav {
+        display: flex;
+    }
+
+    #span {
+        display: none;
+    }
+
+    .hero {
+        background: url('assets/images/Colar\ de\ Ouro\ Loras\ Gold.png') no-repeat center right/cover;
+        background-size: 200% auto;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 2rem;
+        margin-bottom: 0px;
+    }
+
+    .hero>div>h1 {
+        text-indent: -2cap;
+    }
+
+    .hero span {
+        color: #fff;
+    }
+
+    .aboutus-section {
+        gap: 5cap;
+        flex-flow: column wrap;
+        margin-bottom: 4cap;
+
+    }
+
+    .logo-image2 {
+        width: 40vw;
+        height: auto;
+        border-radius: 10px;
+        animation: flutuar 3s infinite ease-in-out;
+    }
+
+    #maintitle {
+        display: none;
+    }
+
+    .produtos {
+        margin-bottom: 5cap;
+    }
+
+    .form-contact-container {
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
+        height: auto;
+        padding: 20px;
+
+
+    }
+
+    form {
+        flex-flow: column wrap;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 1;
+        width: 90vw;
+        height: 80vh;
+        padding: 10px;
+
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 0px;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 0px;
+    }
+
+    .contact-image {
+        display: none;
+
+    }
+
+    .contact-image1 {
+        display: flex;
+        width: 85vw;
+        height: auto;
+        cursor: pointer;
+
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 10px;
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .logo {
+        width: 25vw;
+        height: auto;
+    }
+
+    nav {
+        display: none;
+    }
+
+    nav {
+        display: none;
+        flex-direction: column;
+        text-align: center;
+        background-color: #111;
+        width: 100%;
+        position: absolute;
+        top: 90%;
+        left: 0;
+        padding: 10px 0;
+        transition: all 0.3s ease;
+    }
+
+    nav.show {
+        display: flex;
+    }
+
+    #span {
+        display: block;
+    }
+
+    .hero {
+        background: url('assets/images/Colar\ de\ Ouro\ Loras\ Gold.png') no-repeat center right/cover;
+        background-size: 180% auto;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 2rem;
+        margin-bottom: 0px;
+    }
+
+    .hero>div>h1 {
+        font-size: 1.5rem;
+        text-indent: -1cap;
+    }
+
+    .aboutus-section {
+        gap: 5cap;
+        flex-flow: column wrap;
+        margin-bottom: 4cap;
+
+    }
+
+    .logo-image2 {
+        width: 60vw;
+        height: auto;
+        border-radius: 10px;
+        animation: flutuar 3s infinite ease-in-out;
+    }
+
+    .contact-image1 {
+        width: 81vw;
+        height: auto;
+
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 10px;
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 10px;
+    }
+
+    .produtos h2 {
+        font-size: 1.5rem;
+        margin-bottom: 40px;
+    }
+
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 20px;
+    }
+
+    .form-contact-container {
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
+        height: auto;
+        padding: 20px;
+    }
+
+    input,
+    textarea {
+        width: 80%;
+        height: 50px;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid var(--color-bg-dark2);
+        text-align: left;
+        font-family: "Poppins", sans-serif;
+        font-size: 0.9rem;
+        margin-bottom: 2%;
+    }
+
+    label {
+        text-indent: -12cap;
+    }
+
+    .att {
+        /* text-align: left; */
+        text-indent: -15cap;
+    }
+
+    button {
+        width: 50%;
+        height: 30px;
+        padding: 5px 25px 5px 25px;
+        border-radius: 5px;
+        border: none;
+        background-color: #C8A54D;
+        font-family: "Montserrat", sans-serif;
+        font-size: 0.9rem;
+        font-weight: 500;
+        cursor: pointer;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 320px) {
+
+    .logo {
+        width: 30vw;
+        height: auto;
+    }
+
+    .hero {
+        background: url('assets/images/Colar\ de\ Ouro\ Loras\ Gold.png') no-repeat center right/cover;
+        background-size: 180% auto;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 2rem;
+        margin-bottom: 0px;
+    }
+
+    .hero>div>h1 {
+        font-size: 1.2rem;
+        text-indent: -2cap;
+    }
+
+    .aboutus-section {
+        gap: 5cap;
+        flex-flow: column wrap;
+        margin-bottom: 4cap;
+
+    }
+
+    .logo-image2 {
+        width: 70vw;
+        height: auto;
+        border-radius: 10px;
+        animation: flutuar 3s infinite ease-in-out;
+    }
+
+    .contact-image1 {
+        width: 80vw;
+        height: auto;
+
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 10px;
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 10px;
+    }
+
+    .produtos h2 {
+        font-size: 1.2rem;
+        margin-bottom: 40px;
+    }
+
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 20px;
+    }
+
+    .contato {
+        width: 90vw;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .form-contact-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
+        height: 100vh;
+    }
+
+    input,
+    textarea {
+        width: auto;
+        height: 50px;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid var(--color-bg-dark2);
+        text-align: left;
+        font-family: "Poppins", sans-serif;
+        font-size: 0.9rem;
+        margin-bottom: 2%;
+    }
+
 }

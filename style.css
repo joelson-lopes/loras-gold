@@ -804,8 +804,8 @@ footer {
     }
 
 }
-
-@media (max-width: 1680px) {
+/* 
+@media (max-width: 160px) {
 
     .logo {
         width: 35vw;
@@ -895,4 +895,4 @@ footer {
         margin-bottom: 2%;
     }
 
-}
+} */

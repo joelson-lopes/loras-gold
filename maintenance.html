@@ -1,0 +1,249 @@
+<!-- <!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Site em Manutenção</title>
+  <meta name="description" content="Página full screen animada e responsiva de site em manutenção." />
+  <meta property="og:title" content="Site em Manutenção" />
+  <meta property="og:description" content="Voltamos já! Enquanto isso, deixe o seu e‑mail para ser notificado." />
+  <meta name="theme-color" content="#0b1020" />
+  <style>
+    :root {
+      --bg1: #0b1020; /* dark indigo */
+      --bg2: #121a38; /* deep navy */
+      --accent: #e6b800; /* gold */
+      --accent-2: #ffd166; /* soft gold */
+      --text: #e9eefc; /* light */
+      --muted: #b8c0e0; /* muted */
+      --glass: rgba(255, 255, 255, 0.07);
+      --border: rgba(255, 255, 255, 0.15);
+      --shadow: 0 10px 30px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.04);
+    }
+
+    * { box-sizing: border-box }
+    html, body { height: 100% }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, 'Helvetica Neue', Arial, 'Apple Color Emoji', 'Segoe UI Emoji';
+      color: var(--text);
+      background: radial-gradient(1200px 800px at 80% -10%, #2b335d22, transparent 60%),
+                  radial-gradient(1000px 700px at -10% 90%, #ffd16613, transparent 55%),
+                  linear-gradient(120deg, var(--bg1), var(--bg2));
+      overflow: hidden;
+    }
+
+    /* Animated aurora background */
+    .aurora {
+      position: fixed; inset: -20vmax; filter: blur(40px); opacity: .55; pointer-events:none;
+      background: conic-gradient(from 0deg,
+        rgba(255, 209, 102, .18), rgba(230, 184, 0, .12), rgba(99, 102, 241, .12), rgba(56, 189, 248, .12), rgba(255, 209, 102, .18));
+      animation: spin 24s linear infinite;
+    }
+    .aurora::after, .aurora::before {
+      content: ""; position: absolute; inset: 0; background: inherit; animation: spin 34s linear infinite reverse; mix-blend-mode: screen; opacity: .8;
+    }
+    @keyframes spin { to { transform: rotate(1turn) } }
+
+    /* Layout */
+    .wrap { position: relative; min-height: 100vh; display: grid; place-items: center; padding: clamp(16px, 4vw, 48px); }
+    .card {
+      width: min(100%, 920px);
+      display: grid; grid-template-columns: 1.1fr 1fr; gap: clamp(16px, 4vw, 28px);
+      background: var(--glass);
+      border: 1px solid var(--border); border-radius: 28px; box-shadow: var(--shadow);
+      backdrop-filter: blur(14px) saturate(120%);
+      padding: clamp(18px, 4vw, 32px);
+    }
+
+    @media (max-width: 880px) { .card { grid-template-columns: 1fr } }
+
+    /* Left column */
+    .brand {
+      display: flex; align-items: center; gap: 12px; margin-bottom: 10px; opacity: .95
+    }
+    .brand .logo {
+      width: 42px; height: 42px; border-radius: 12px; display: grid; place-items: center; color: #0b0b0b;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2)); font-weight: 900;
+      text-shadow: 0 1px 0 rgba(255,255,255,.5); box-shadow: inset 0 1px 0 #fff6, 0 6px 12px #0004;
+    }
+    .brand strong { letter-spacing: .3px }
+
+    h1 { font-size: clamp(28px, 4.2vw, 44px); line-height: 1.05; margin: 6px 0 10px; }
+    .lead { color: var(--muted); font-size: clamp(14px, 1.8vw, 18px); line-height: 1.5 }
+
+    /* Progress */
+    .progress {
+      --p: 22%;
+      position: relative; height: 12px; border-radius: 999px; overflow: hidden; margin: 18px 0 8px;
+      background: linear-gradient(90deg, #ffffff1a, #ffffff06);
+      border: 1px solid #ffffff14;
+    }
+    .bar { position: absolute; inset: 0; width: var(--p); background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      box-shadow: 0 0 24px #ffd16655; animation: load 16s ease-in-out infinite alternate; }
+    @keyframes load { 0%{width:12%} 45%{width:58%} 75%{width:78%} 100%{width:92%} }
+    .hint { font-size: 12px; opacity: .8 }
+
+    /* Right column - graphic */
+    .graphic {
+      position: relative; aspect-ratio: 1 / 1; border-radius: 20px; border: 1px dashed #ffffff25; overflow: hidden;
+      display: grid; place-items: center; background: linear-gradient(180deg,#00000038,#00000020);
+    }
+
+    /* Gears */
+    .gear { fill: none; stroke: #ffd166; stroke-width: 2.2; opacity:.95; filter: drop-shadow(0 4px 12px #0008); }
+    .g1 { animation: rotateCW 9s linear infinite; transform-origin: 50% 50% }
+    .g2 { animation: rotateCCW 6s linear infinite; transform-origin: 50% 50% }
+    .g3 { animation: rotateCW 12s linear infinite; transform-origin: 50% 50% }
+    @keyframes rotateCW { to { transform: rotate(1turn) } }
+    @keyframes rotateCCW { to { transform: rotate(-1turn) } }
+
+    /* Email form */
+    .row { display: grid; grid-template-columns: 1fr auto; gap: 10px; margin-top: 16px }
+    .input {
+      width: 100%; height: 46px; border-radius: 14px; border: 1px solid #ffffff28; background: #0b0f1a8c;
+      color: var(--text); padding: 0 14px; outline: none; transition: border .2s, box-shadow .2s;
+    }
+    .input::placeholder { color: #b7c1e6a8 }
+    .input:focus { border-color: #ffd16655; box-shadow: 0 0 0 4px #ffd1661f }
+
+    .btn {
+      height: 46px; padding: 0 16px; border-radius: 14px; border: none; cursor: pointer; font-weight: 700;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2)); color: #121212; box-shadow: 0 8px 18px #0007;
+    }
+    .btn:active { transform: translateY(1px) }
+
+    /* Footer */
+    .footer { display:flex; align-items:center; justify-content:space-between; gap:14px; margin-top: 14px; color:#c9d3fbcc; font-size: 13px }
+    .badges { display:flex; gap: 10px; flex-wrap: wrap }
+    .badge { border:1px solid #ffffff22; background:#0c12207a; padding:6px 10px; border-radius:999px }
+    .badge1 { border:1px solid #ffffff22; background:#0c12207a; padding:6px 10px; border-radius:999px; text-decoration: none; color: #c9d3fbcc; }
+
+    /* floating shapes */
+    .float { position: absolute; width: 180px; height: 180px; border-radius: 50%; filter: blur(30px); opacity: .2; mix-blend-mode: screen }
+    .f1 { background: #ffd166; right:-40px; top:-40px; animation: bob 8s ease-in-out infinite }
+    .f2 { background: #60a5fa; left:-50px; bottom:-50px; animation: bob 12s ease-in-out infinite reverse }
+    @keyframes bob { 50% { transform: translateY(-12px) translateX(8px) scale(1.04) } }
+
+    /* Respect reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      .aurora, .bar, .g1, .g2, .g3, .f1, .f2 { animation: none !important }
+    }
+  </style>
+</head>
+<body>
+  <div class="aurora" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="card" role="main" aria-labelledby="titulo">
+      <section>
+        <div class="brand" aria-label="Identidade visual">
+          <div class="logo" aria-hidden="true">LG</div>
+          <div>
+            <strong>Loras Gold</strong><br>
+            <span style="color:#c9d3fbcc">Estamos a preparar algo melhor ✨</span>
+          </div>
+        </div>
+
+        <h1 id="titulo">Site em manutenção</h1>
+        <p class="lead">Estamos a fazer melhorias para oferecer uma experiência mais rápida, segura e bonita. Obrigado pela paciência! Enquanto isso, deixe o seu e‑mail e avisamos quando ficar pronto.</p>
+
+        <div class="progress" aria-label="Progresso das melhorias">
+          <div class="bar"></div>
+        </div>
+        <div class="hint" id="countdown" aria-live="polite">Estimativa: —</div>
+
+        <form id="notify" class="row" aria-label="Formulário de notificação">
+          <label for="email" class="visually-hidden">E‑mail</label>
+          <input class="input" id="email" name="email" type="email" placeholder="Seu e‑mail para aviso" required />
+          <button class="btn" type="submit">Avisar‑me</button>
+        </form>
+
+        <div class="footer">
+          <div class="badges" aria-label="Informações rápidas">
+            <a class="badge1" href="https://wa.me/244926810795">Suporte: +244 926 810 795</a>
+            <span class="badge">Transparência</span>
+            <span class="badge">Segurança</span>
+          </div>
+          <span>&copy; <span id="year"></span> Loras Gold</span>
+        </div>
+      </section>
+
+      <aside class="graphic" aria-hidden="true">
+        <svg viewBox="0 0 200 200" width="84%" height="84%" aria-hidden="true">
+          <!-- Large gear 
+          <g class="g1">
+            <circle cx="60" cy="60" r="26" class="gear"/>
+            <g stroke-linecap="round" class="gear">
+              <path d="M60 26 v-12"/>
+              <path d="M60 106 v12"/>
+              <path d="M26 60 h-12"/>
+              <path d="M106 60 h12"/>
+              <path d="M34 34 l-8 -8"/>
+              <path d="M86 86 l8 8"/>
+              <path d="M34 86 l-8 8"/>
+              <path d="M86 34 l8 -8"/>
+            </g>
+          </g>
+          <!-- Small gear 
+          <g transform="translate(110,90)" class="g2">
+            <circle cx="30" cy="30" r="18" class="gear"/>
+            <g stroke-linecap="round" class="gear">
+              <path d="M30 10 v-9"/>
+              <path d="M30 50 v9"/>
+              <path d="M10 30 h-9"/>
+              <path d="M50 30 h9"/>
+              <path d="M15 15 l-6 -6"/>
+              <path d="M45 45 l6 6"/>
+              <path d="M15 45 l-6 6"/>
+              <path d="M45 15 l6 -6"/>
+            </g>
+          </g>
+          <!-- Progress ring
+          <g class="g3">
+            <circle cx="150" cy="40" r="20" class="gear"/>
+          </g>
+        </svg>
+        <div class="float f1"></div>
+        <div class="float f2"></div>
+      </aside>
+    </div>
+  </div>
+
+  <script>
+    // Accessibility helper: visually hidden label
+    (function(){
+      const style = document.createElement('style');
+      style.innerHTML = `.visually-hidden{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap}`;
+      document.head.appendChild(style);
+    })();
+
+    // Countdown: 72h from first load (demo)
+    const target = new Date(Date.now() + 72 * 60 * 60 * 1000);
+    const $cd = document.getElementById('countdown');
+    const $year = document.getElementById('year');
+    $year.textContent = new Date().getFullYear();
+
+    function pad(n){ return String(n).padStart(2,'0') }
+    function tick(){
+      const now = new Date();
+      let diff = Math.max(0, target - now);
+      const d = Math.floor(diff / (24*60*60*1000)); diff -= d*24*60*60*1000;
+      const h = Math.floor(diff / (60*60*1000)); diff -= h*60*60*1000;
+      const m = Math.floor(diff / (60*1000)); diff -= m*60*1000;
+      const s = Math.floor(diff / 1000);
+      $cd.textContent = `Estimativa: ${d}d ${pad(h)}h ${pad(m)}m ${pad(s)}s`;
+    }
+    tick();
+    setInterval(tick, 1000);
+
+    // Fake notify (mailto)
+    document.getElementById('notify').addEventListener('submit', function(e){
+      e.preventDefault();
+      const email = document.getElementById('email').value.trim();
+      const subject = encodeURIComponent('Notifique-me quando o site voltar');
+      const body = encodeURIComponent('Olá, gostaria de receber um aviso quando o site estiver disponível. Meu e‑mail: ' + email);
+      window.location.href = `mailto:lorasgold@example.com?subject=${subject}&body=${body}`;
+    });
+  </script>
+</body>
+</html> -->
